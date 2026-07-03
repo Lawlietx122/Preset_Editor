@@ -1,3 +1,5 @@
+> Hey There!, I am BLUE TIGER
+
 # Preset Editor
 
 Preset Editor - настольный редактор JSON-пресетов для SillyTavern и похожих prompt/preset workflow. Приложение сделано для удобной ручной сборки, проверки и оформления больших наборов prompt-блоков без постоянного редактирования JSON в текстовом редакторе.
