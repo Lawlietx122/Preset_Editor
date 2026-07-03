@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="120" fill="none">
+<img width="1200" height="110" alt="divider_data_capsul" src="https://github.com/user-attachments/assets/c8cda37e-89cc-4049-8569-61e09e65a50b" /><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="120" fill="none">
   <defs>
     <linearGradient id="divider-cyber-a" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#06b6d4"/>
@@ -88,3 +88,19 @@ The release check no longer treats empty prompt blocks or prompt blocks without 
 
 ## License
 For now, the project is marked as UNLICENSED in package.json.
+![Uploading divider_d<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 110" width="100%" height="110">
+  <!-- symmetric split -->
+  <line x1="0" y1="55" x2="520" y2="55" stroke="#334155"/>
+  <line x1="680" y1="55" x2="1200" y2="55" stroke="#334155"/>
+
+  <!-- perfectly centered panel -->
+  <rect x="520" y="35" width="160" height="40" rx="20" fill="#0f172a" stroke="#334155"/>
+
+  <!-- centered around 600 -->
+  <circle cx="560" cy="55" r="6" fill="#22d3ee"/>
+  <circle cx="600" cy="55" r="6" fill="#8b5cf6"/>
+  <circle cx="640" cy="55" r="6" fill="#ec4899">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+</svg>ata_capsul.svg…]()
+
