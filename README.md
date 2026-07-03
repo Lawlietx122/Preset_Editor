@@ -1,21 +1,3 @@
-<img width="1000" height="100" alt="divider_dual_energy_tracks" src="https://github.com/user-attachments/assets/2ce59149-332a-4a52-a3dd-e86baf2924e7" /><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="120" fill="none">
-  <defs>
-    <linearGradient id="divider-cyber-a" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#06b6d4"/>
-      <stop offset="50%" stop-color="#8b5cf6"/>
-      <stop offset="100%" stop-color="#ec4899"/>
-    </linearGradient>
-  </defs>
-
-  <!-- symmetric geometry -->
-  <path d="M0 60 H420 L480 20 H720 L780 60 H1200"
-        stroke="#1f2937" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <path d="M0 60 H420 L480 20 H720 L780 60 H1200"
-        stroke="url(#divider-cyber-a)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
-        stroke-dasharray="180 1600">
-    <animate attributeName="stroke-dashoffset" values="1780;0" dur="3s" repeatCount="indefinite"/>
-  </path>
 # Preset Editor
 
 Preset Editor - настольный редактор JSON-пресетов для SillyTavern и похожих prompt/preset workflow. Приложение сделано для удобной ручной сборки, проверки и оформления больших наборов prompt-блоков без постоянного редактирования JSON в текстовом редакторе.
