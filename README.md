@@ -16,15 +16,6 @@
         stroke-dasharray="180 1600">
     <animate attributeName="stroke-dashoffset" values="1780;0" dur="3s" repeatCount="indefinite"/>
   </path>
-
-  <!-- perfectly centered UI -->
-  <rect x="560" y="46" width="80" height="28" rx="14" fill="#0f172a" stroke="#334155"/>
-
-  <circle cx="585" cy="60" r="5" fill="#22d3ee"/>
-  <circle cx="600" cy="60" r="5" fill="#8b5cf6"/>
-  <circle cx="615" cy="60" r="5" fill="#ec4899"/>
-</svg><img width="1200" height="120" alt="divider_cyber_cycle" src="https://github.com/user-attachments/assets/0c95d8d7-c9dc-4249-94e0-9face0e5725c" />
-
 # Preset Editor
 
 Preset Editor - настольный редактор JSON-пресетов для SillyTavern и похожих prompt/preset workflow. Приложение сделано для удобной ручной сборки, проверки и оформления больших наборов prompt-блоков без постоянного редактирования JSON в текстовом редакторе.
