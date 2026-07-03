@@ -7,7 +7,12 @@ Preset Editor - настольный редактор JSON-пресетов дл
 ...
 <img width="1913" height="1068" alt="image" src="https://github.com/user-attachments/assets/43ad1f5c-c9b9-4ffa-8ba6-98112e2352f6" />
 ...
+### Важно
+Windows может показать предупреждение SmartScreen, потому что приложение пока не подписано сертификатом.
+Если вы доверяете этому релизу, нажмите "Подробнее" -> "Выполнить в любом случае".
 
+Windows may show a SmartScreen warning because the app is unsigned.
+Click More info -> Run anyway if you trust this release.
 ## Что умеет
 
 - Открывать и редактировать JSON-пресеты с `prompts` и `prompt_order`.
