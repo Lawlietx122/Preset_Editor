@@ -25,3 +25,27 @@ Preset Editor - настольный редактор JSON-пресетов дл
 
 ## Лицензия
 Пока проект помечен как `UNLICENSED` в `package.json`.
+
+ENG VER.
+# Preset Editor
+Preset Editor is a desktop editor for JSON presets designed for SillyTavern and similar prompt/preset workflows. The application is built for convenient manual assembly, validation, and formatting of large sets of prompt blocks, eliminating the need for constant JSON editing in a text editor.
+
+## Features
+Open and edit JSON presets with prompts and prompt_order.
+Manage prompt blocks: name, role, enable/disable, order, injection depth, position, and content.
+Import and export completed preset JSON.
+Work with a preset library: statuses, tags, search, sorting, series, and covers.
+Display a preset Preview and compile a final preview of enabled prompt blocks.
+Check the release readiness of a preset: name, description, tags, cover, large prompt blocks, sections, disabled blocks, directives, and variables.
+Scan for getvar / setvar macros and prompt directives.
+Maintain favorite prompt blocks and notes.
+Operate as a desktop application on Electron and as a PWA version from the PresetEditorApp/pwa folder.
+
+## Current Version
+Current version: 0.1.1.
+
+In this version:
+The release check no longer treats empty prompt blocks or prompt blocks without a name as errors.
+
+## License
+For now, the project is marked as UNLICENSED in package.json.
