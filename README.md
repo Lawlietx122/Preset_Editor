@@ -1,30 +1,3 @@
-<img width="1200" height="110" alt="divider_data_capsul" src="https://github.com/user-attachments/assets/c8cda37e-89cc-4049-8569-61e09e65a50b" /><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="120" fill="none">
-  <defs>
-    <linearGradient id="divider-cyber-a" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#06b6d4"/>
-      <stop offset="50%" stop-color="#8b5cf6"/>
-      <stop offset="100%" stop-color="#ec4899"/>
-    </linearGradient>
-  </defs>
-
-  <!-- symmetric geometry -->
-  <path d="M0 60 H420 L480 20 H720 L780 60 H1200"
-        stroke="#1f2937" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <path d="M0 60 H420 L480 20 H720 L780 60 H1200"
-        stroke="url(#divider-cyber-a)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
-        stroke-dasharray="180 1600">
-    <animate attributeName="stroke-dashoffset" values="1780;0" dur="3s" repeatCount="indefinite"/>
-  </path>
-
-  <!-- perfectly centered UI -->
-  <rect x="560" y="46" width="80" height="28" rx="14" fill="#0f172a" stroke="#334155"/>
-
-  <circle cx="585" cy="60" r="5" fill="#22d3ee"/>
-  <circle cx="600" cy="60" r="5" fill="#8b5cf6"/>
-  <circle cx="615" cy="60" r="5" fill="#ec4899"/>
-</svg><img width="1200" height="120" alt="divider_cyber_cycle" src="https://github.com/user-attachments/assets/854f2873-0824-4384-b2a0-964b4e5f8b6b" />
-
 > Hey There!, I am BLUE TIGER
 
 # Preset Editor
