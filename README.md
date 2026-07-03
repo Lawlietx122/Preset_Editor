@@ -26,7 +26,8 @@ Preset Editor - настольный редактор JSON-пресетов дл
 ## Лицензия
 Пока проект помечен как `UNLICENSED` в `package.json`.
 
-ENG VER.
+
+
 # Preset Editor
 Preset Editor is a desktop editor for JSON presets designed for SillyTavern and similar prompt/preset workflows. The application is built for convenient manual assembly, validation, and formatting of large sets of prompt blocks, eliminating the need for constant JSON editing in a text editor.
 
