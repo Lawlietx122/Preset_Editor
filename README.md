@@ -2,8 +2,11 @@
 
 Preset Editor - настольный редактор JSON-пресетов для SillyTavern и похожих prompt/preset workflow. Приложение сделано для удобной ручной сборки, проверки и оформления больших наборов prompt-блоков без постоянного редактирования JSON в текстовом редакторе.
 <img width="1918" height="935" alt="photo_2026-07-03_12-33-57" src="https://github.com/user-attachments/assets/2867f308-1c6a-4717-875a-f4ec5dcab5bd" />
+...
 <img width="1711" height="1042" alt="image" src="https://github.com/user-attachments/assets/cefb299b-53e6-4b27-bf70-4579050c358c" />
+...
 <img width="1913" height="1068" alt="image" src="https://github.com/user-attachments/assets/43ad1f5c-c9b9-4ffa-8ba6-98112e2352f6" />
+...
 
 ## Что умеет
 
