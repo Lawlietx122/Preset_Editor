@@ -1,4 +1,29 @@
-> Hey There!, I am BLUE TIGER
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="120" fill="none">
+  <defs>
+    <linearGradient id="divider-cyber-a" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+
+  <!-- symmetric geometry -->
+  <path d="M0 60 H420 L480 20 H720 L780 60 H1200"
+        stroke="#1f2937" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M0 60 H420 L480 20 H720 L780 60 H1200"
+        stroke="url(#divider-cyber-a)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+        stroke-dasharray="180 1600">
+    <animate attributeName="stroke-dashoffset" values="1780;0" dur="3s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- perfectly centered UI -->
+  <rect x="560" y="46" width="80" height="28" rx="14" fill="#0f172a" stroke="#334155"/>
+
+  <circle cx="585" cy="60" r="5" fill="#22d3ee"/>
+  <circle cx="600" cy="60" r="5" fill="#8b5cf6"/>
+  <circle cx="615" cy="60" r="5" fill="#ec4899"/>
+</svg><img width="1200" height="120" alt="divider_cyber_cycle" src="https://github.com/user-attachments/assets/0c95d8d7-c9dc-4249-94e0-9face0e5725c" />
 
 # Preset Editor
 
@@ -61,21 +86,3 @@ The release check no longer treats empty prompt blocks or prompt blocks without 
 
 ## License
 For now, the project is marked as UNLICENSED in package.json.
-
-
-![Uploading divider_d<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 110" width="100%" height="110">
-  <!-- symmetric split -->
-  <line x1="0" y1="55" x2="520" y2="55" stroke="#334155"/>
-  <line x1="680" y1="55" x2="1200" y2="55" stroke="#334155"/>
-
-  <!-- perfectly centered panel -->
-  <rect x="520" y="35" width="160" height="40" rx="20" fill="#0f172a" stroke="#334155"/>
-
-  <!-- centered around 600 -->
-  <circle cx="560" cy="55" r="6" fill="#22d3ee"/>
-  <circle cx="600" cy="55" r="6" fill="#8b5cf6"/>
-  <circle cx="640" cy="55" r="6" fill="#ec4899">
-    <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
-  </circle>
-</svg>ata_capsul.svg…]()
-
