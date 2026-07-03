@@ -30,39 +30,20 @@
 Preset Editor - настольный редактор JSON-пресетов для SillyTavern и похожих prompt/preset workflow. Приложение сделано для удобной ручной сборки, проверки и оформления больших наборов prompt-блоков без постоянного редактирования JSON в текстовом редакторе.
 <img width="1918" height="935" alt="photo_2026-07-03_12-33-57" src="https://github.com/user-attachments/assets/2867f308-1c6a-4717-875a-f4ec5dcab5bd" />
 ![U<img width="1000" height="100" alt="divider_dual_energy_tracks" src="https://github.com/user-attachments/assets/1f0fc158-ffab-406e-b8f2-74a54908d4f6" />ploading divider_dual_energy_tracks.svg…]()
-
 <img width="1711" height="1042" alt="image" src="https://github.com/user-attachments/assets/cefb299b-53e6-4b27-bf70-4579050c358c" />
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" width="100%" height="100">
   <path d="M0 40 H1000" stroke="#1f2937" stroke-width="6"/>
   <path d="M0 60 H1000" stroke="#1f2937" stroke-width="6"/>
-
   <path d="M0 40 H1000" stroke="#22d3ee" stroke-width="3"
         stroke-dasharray="120 1200">
     <animate attributeName="stroke-dashoffset" values="1320;0" dur="2.5s" repeatCount="indefinite"/>
   </path>
-
   <path d="M0 60 H1000" stroke="#8b5cf6" stroke-width="3"
         stroke-dasharray="120 1200">
     <animate attributeName="stroke-dashoffset" values="0;1320" dur="2.5s" repeatCount="indefinite"/>
   </path>
 </svg>
-
 <img width="1913" height="1068" alt="image" src="https://github.com/user-attachments/assets/43ad1f5c-c9b9-4ffa-8ba6-98112e2352f6" />
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" width="100%" height="100">
-  <path d="M0 40 H1000" stroke="#1f2937" stroke-width="6"/>
-  <path d="M0 60 H1000" stroke="#1f2937" stroke-width="6"/>
-
-  <path d="M0 40 H1000" stroke="#22d3ee" stroke-width="3"
-        stroke-dasharray="120 1200">
-    <animate attributeName="stroke-dashoffset" values="1320;0" dur="2.5s" repeatCount="indefinite"/>
-  </path>
-
-  <path d="M0 60 H1000" stroke="#8b5cf6" stroke-width="3"
-        stroke-dasharray="120 1200">
-    <animate attributeName="stroke-dashoffset" values="0;1320" dur="2.5s" repeatCount="indefinite"/>
-  </path>
-</svg>
-
 ### Важно
 Windows может показать предупреждение SmartScreen, потому что приложение пока не подписано сертификатом.
 Если вы доверяете этому релизу, нажмите "Подробнее" -> "Выполнить в любом случае".
