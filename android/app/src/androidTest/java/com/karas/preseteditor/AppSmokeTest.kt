@@ -5,6 +5,8 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.printToString
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -28,14 +30,25 @@ class AppSmokeTest {
         scenario?.close()
     }
 
+    /** Waits for [text]; on timeout the failure message carries what the screen showed. */
+    private fun waitFor(text: String) {
+        try {
+            compose.waitUntilAtLeastOneExists(hasText(text), 10_000)
+        } catch (error: Throwable) {
+            val tree = runCatching { compose.onRoot(useUnmergedTree = true).printToString() }
+                .getOrElse { "no compose root: $it" }
+            throw AssertionError("«$text» not shown. Screen:\n$tree", error)
+        }
+    }
+
     @Test
     fun createPresetAndAddPrompt() {
         scenario = ActivityScenario.launch(MainActivity::class.java)
-        compose.waitUntilAtLeastOneExists(hasText("Новый пресет"), 10_000)
+        waitFor("Новый пресет")
         compose.onNodeWithText("Новый пресет").performClick()
-        compose.waitUntilAtLeastOneExists(hasText("Промпты"), 10_000)
+        waitFor("Промпты")
         compose.onNodeWithText("Промпт").performClick()
-        compose.waitUntilAtLeastOneExists(hasText("Название"), 10_000)
+        waitFor("Название")
         compose.waitForIdle()
     }
 
@@ -49,8 +62,8 @@ class AppSmokeTest {
             putExtra(Intent.EXTRA_TEXT, json)
         }
         scenario = ActivityScenario.launch(intent)
-        compose.waitUntilAtLeastOneExists(hasText("Промпты"), 10_000)
-        compose.waitUntilAtLeastOneExists(hasText("Main Prompt"), 10_000)
+        waitFor("Промпты")
+        waitFor("Main Prompt")
         compose.onNodeWithText("Инфо").performClick()
         compose.waitForIdle()
     }

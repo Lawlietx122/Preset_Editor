@@ -91,7 +91,7 @@ jobs:
           script: |
             chmod +x gradlew
             adb logcat -c
-            ./gradlew --no-daemon connectedDebugAndroidTest || (adb logcat -d > logcat.txt; grep -n -A60 "FATAL EXCEPTION" logcat.txt | head -150; exit 1)
+            ./gradlew --no-daemon connectedDebugAndroidTest || (adb logcat -d > logcat.txt; grep -E "AndroidRuntime|FATAL|preseteditor|System.err|TestRunner|ANR" logcat.txt | tail -200; cat app/build/outputs/androidTest-results/connected/debug/*.xml | head -400; exit 1)
 
       - uses: actions/upload-artifact@v4
         if: failure()
