@@ -29,8 +29,9 @@ object PresetJson {
 
     const val DEFAULT_CHARACTER_ID = 100001
 
+    // Android uses ICU regexes, which need every literal "{" and "}" escaped, even inside [].
     private val VARIABLE_REGEX = Regex(
-        """\{\{\s*(?:getvar|setvar|addvar|incvar|decvar|flushvar|getglobalvar|setglobalvar|addglobalvar|incglobalvar|decglobalvar|flushglobalvar)::\s*([^}:]+)[^}]*}}""",
+        """\{\{\s*(?:getvar|setvar|addvar|incvar|decvar|flushvar|getglobalvar|setglobalvar|addglobalvar|incglobalvar|decglobalvar|flushglobalvar)::\s*([^\}:]+)[^\}]*\}\}""",
         RegexOption.IGNORE_CASE
     )
 
@@ -122,7 +123,7 @@ object PresetJson {
 
     // ---- sections ------------------------------------------------------------------
 
-    private val SECTION_EDGE = Regex("""^[\s=:#*._|+~<>{}\[\]()\\/\-–—─-╿]+|[\s=:#*._|+~<>{}\[\]()\\/\-–—─-╿]+$""")
+    private val SECTION_EDGE = Regex("""^[\s=:#*._|+~<>\{\}\[\]()\\/\-–—─-╿]+|[\s=:#*._|+~<>\{\}\[\]()\\/\-–—─-╿]+$""")
     private val STRONG_PREFIX = Regex("""^(={2,}|#{2,}|[-_*~]{3,}|[─-╿]+)""")
     private val WRAPPED = Regex("""^(={2,}|#{2,}|[-_*~]{3,}|[─-╿]+).+?(={2,}|#{2,}|[-_*~]{3,}|[─-╿]+)$""")
     private val ICON_DASH = Regex("""^[^\w\s]{1,4}\s*[-–—─-╿]\s*\S""")
