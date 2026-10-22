@@ -1,6 +1,7 @@
 package com.karas.preseteditor.ui.library
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.karas.preseteditor.data.AppServices
@@ -74,6 +75,7 @@ class LibraryViewModel(application: Application) : AndroidViewModel(application)
                 _messages.send("Пресет импортирован")
                 onImported(id)
             }.onFailure { error ->
+                Log.w("PresetEditor", "Import failed", error)
                 _messages.send("Не удалось импортировать: ${error.message ?: "неизвестная ошибка"}")
             }
         }

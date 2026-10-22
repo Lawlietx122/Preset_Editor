@@ -2,9 +2,8 @@ package com.karas.preseteditor
 
 import android.content.Intent
 import androidx.compose.ui.test.ExperimentalTestApi
-import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
-import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.printToString
 import androidx.compose.ui.test.performClick
@@ -33,7 +32,9 @@ class AppSmokeTest {
     /** Waits for [text]; on timeout the failure message carries what the screen showed. */
     private fun waitFor(text: String) {
         try {
-            compose.waitUntilAtLeastOneExists(hasText(text), 10_000)
+            compose.waitUntil(10_000) {
+                compose.onAllNodesWithText(text, useUnmergedTree = true).fetchSemanticsNodes().isNotEmpty()
+            }
         } catch (error: Throwable) {
             val tree = runCatching { compose.onRoot(useUnmergedTree = true).printToString() }
                 .getOrElse { "no compose root: $it" }
@@ -45,9 +46,9 @@ class AppSmokeTest {
     fun createPresetAndAddPrompt() {
         scenario = ActivityScenario.launch(MainActivity::class.java)
         waitFor("Новый пресет")
-        compose.onNodeWithText("Новый пресет").performClick()
+        compose.onAllNodesWithText("Новый пресет", useUnmergedTree = true)[0].performClick()
         waitFor("Промпты")
-        compose.onNodeWithText("Промпт").performClick()
+        compose.onAllNodesWithText("Промпт", useUnmergedTree = true)[0].performClick()
         waitFor("Название")
         compose.waitForIdle()
     }
@@ -64,7 +65,7 @@ class AppSmokeTest {
         scenario = ActivityScenario.launch(intent)
         waitFor("Промпты")
         waitFor("Main Prompt")
-        compose.onNodeWithText("Инфо").performClick()
+        compose.onAllNodesWithText("Инфо", useUnmergedTree = true)[0].performClick()
         compose.waitForIdle()
     }
 }
