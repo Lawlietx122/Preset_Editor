@@ -1,0 +1,8 @@
+{
+  "appId": "com.karas.preseteditor",
+  "appName": "Preset Editor",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#101010"
+  }
+}
