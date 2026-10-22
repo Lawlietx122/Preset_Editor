@@ -1,0 +1,25 @@
+{
+  "name": "preset-editor-mobile",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Mobile (PWA + Android) build of Preset Editor",
+  "author": "karas",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "npx --yes http-server www -p 8080 -c-1",
+    "android:sync": "node build.mjs && npx cap sync android",
+    "android:apk": "node build.mjs && npx cap sync android && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/filesystem": "^7.1.4",
+    "@capacitor/share": "^7.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "playwright": "^1.56.1"
+  }
+}

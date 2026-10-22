@@ -1,0 +1,616 @@
+/* Mobile layout for Preset Editor. Everything is scoped to body.m:not(#m), which mobile.js sets
+   below 820px, so the desktop layout is untouched on wide screens. */
+
+.m-tabbar,
+.m-sheet-backdrop,
+.m-back,
+.m-sheet-close {
+  display: none;
+}
+
+body.m:not(#m) {
+  --m-tabbar-h: 60px;
+  --m-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --m-safe-top: env(safe-area-inset-top, 0px);
+  height: 100dvh !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* ---- header ---------------------------------------------------------------- */
+
+body.m:not(#m) .app-header {
+  position: relative;
+  flex: 0 0 auto;
+  padding-top: var(--m-safe-top);
+}
+
+body.m:not(#m) .header-inner {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+}
+
+body.m:not(#m) .brand {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+body.m:not(#m) .brand-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.m:not(#m) .brand-sub,
+body.m:not(#m) #fileNameInput,
+body.m:not(#m) #backBtn,
+body.m:not(#m) .toolbar-spacer {
+  display: none !important;
+}
+
+body.m:not(#m) .toolbar {
+  display: contents !important;
+}
+
+body.m:not(#m) .toolbar-group {
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+
+body.m:not(#m) .toolbar .toolbar-group:has(#undoBtn) {
+  order: 2;
+}
+
+body.m:not(#m) .toolbar .toolbar-group:has(#topSaveBtn) {
+  order: 3;
+}
+
+body.m:not(#m) .overflow-wrap {
+  order: 4;
+}
+
+body.m:not(#m) #builderModeTabs {
+  order: 10;
+  flex: 1 0 100%;
+  display: none !important;
+}
+
+body.m:not(#m).m-screen-editor:not(.library-open):not(.drawer-open) #builderModeTabs {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+body.m:not(#m) #builderModeTabs .btn {
+  width: 100%;
+}
+
+body.m:not(#m) .overflow-menu {
+  right: 0;
+  left: auto;
+  max-width: calc(100vw - 24px);
+  z-index: 60;
+}
+
+body.m:not(#m) .overflow-menu .btn {
+  min-height: 44px;
+}
+
+/* ---- main area: exactly one panel at a time -------------------------------- */
+
+body.m:not(#m) .layout {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto !important;
+  overflow: hidden !important;
+  padding: 8px 8px calc(var(--m-tabbar-h) + var(--m-safe-bottom) + 8px) !important;
+  gap: 0 !important;
+  grid-template-columns: none !important;
+}
+
+body.m:not(#m) .side-nav,
+body.m:not(#m) .splitter,
+body.m:not(#m) .preset-panel,
+body.m:not(#m) .editor-panel,
+body.m:not(#m) .drawer-panel,
+body.m:not(#m) .library-panel {
+  display: none !important;
+}
+
+body.m:not(#m) .panel {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  border-radius: 14px;
+}
+
+body.m:not(#m).m-screen-list:not(.library-open):not(.drawer-open) .preset-panel,
+body.m:not(#m).m-screen-editor:not(.library-open):not(.drawer-open) .editor-panel,
+body.m:not(#m).drawer-open:not(.library-open) .drawer-panel,
+body.m:not(#m).library-open .library-panel {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* Settings and favorites hide the header on desktop; keep it hidden on a phone too
+   but give the drawer the whole screen. */
+body.m:not(#m).settings-open .app-header,
+body.m:not(#m).favorites-open .app-header,
+body.m:not(#m).library-open .app-header {
+  display: none !important;
+}
+
+body.m:not(#m).library-open .layout,
+body.m:not(#m).settings-open .layout,
+body.m:not(#m).favorites-open .layout {
+  padding-top: calc(var(--m-safe-top) + 8px) !important;
+}
+
+body.m:not(#m) .panel-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* ---- prompt list ------------------------------------------------------------ */
+
+body.m:not(#m) .preset-panel .panel-head {
+  padding: 10px 12px !important;
+  gap: 8px;
+}
+
+body.m:not(#m) #collapsePresetListBtn,
+body.m:not(#m) #presetAccordionToggle,
+body.m:not(#m) .preset-panel .panel-file {
+  display: none !important;
+}
+
+body.m:not(#m) .preset-panel .panel-body {
+  display: block !important;
+  padding: 10px !important;
+}
+
+body.m:not(#m) .preset-actions {
+  flex-wrap: wrap;
+}
+
+body.m:not(#m) .small-stat {
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+body.m:not(#m) .prompt-row {
+  min-height: 60px;
+  padding-right: 6px;
+  grid-template-columns: 24px minmax(0, 1fr) auto 34px;
+  column-gap: 8px;
+}
+
+body.m:not(#m).reorder-mode .prompt-row {
+  grid-template-columns: 28px 24px minmax(0, 1fr) auto;
+}
+
+body.m:not(#m) .prompt-row .prompt-name {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+body.m:not(#m) .row-actions {
+  gap: 6px;
+}
+
+body.m:not(#m) .row-actions .btn,
+body.m:not(#m) .row-actions button {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+body.m:not(#m) .drag-handle {
+  display: none !important;
+}
+
+body.m:not(#m).reorder-mode .drag-handle {
+  display: inline-flex !important;
+  touch-action: none;
+}
+
+/* ---- editor ---------------------------------------------------------------- */
+
+body.m:not(#m) .editor-panel .editor-head {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px !important;
+  min-height: 0 !important;
+}
+
+body.m:not(#m) #closeEditorPanelBtn {
+  display: none !important;
+}
+
+body.m:not(#m) .editor-panel .panel-body {
+  padding: 12px !important;
+}
+
+body.m:not(#m) .editor-grid,
+body.m:not(#m) .prompt-basic-panel,
+body.m:not(#m) .prompt-advanced-panel,
+body.m:not(#m) .preset-settings-grid,
+body.m:not(#m) .preset-info-grid,
+body.m:not(#m) .preset-info-fields,
+body.m:not(#m) .check-grid,
+body.m:not(#m) .technical-field-list {
+  grid-template-columns: 1fr !important;
+}
+
+body.m:not(#m) .prompt-edit-summary {
+  flex-direction: column;
+  align-items: stretch !important;
+  gap: 10px;
+}
+
+body.m:not(#m) .prompt-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+body.m:not(#m) .prompt-edit-name {
+  white-space: normal !important;
+}
+
+body.m:not(#m) textarea {
+  font-size: 16px;
+}
+
+body.m:not(#m) .content-toolbar,
+body.m:not(#m) .content-token-row {
+  flex-wrap: wrap;
+}
+
+/* ---- back buttons injected by mobile.js ---------------------------------- */
+
+body.m:not(#m) .m-back,
+body.m:not(#m) .m-sheet-close {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 4px;
+  padding-left: 8px !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+body.m:not(#m) .m-sheet-close {
+  margin: 0 0 8px -8px;
+  align-self: flex-start;
+}
+
+body.m:not(#m) .m-back svg,
+body.m:not(#m) .m-sheet-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---- drawers (tools, settings) ------------------------------------------ */
+
+body.m:not(#m) .drawer-panel .panel-head {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px !important;
+}
+
+body.m:not(#m) .drawer-panel .panel-title {
+  flex: 1;
+  font-size: 16px;
+}
+
+body.m:not(#m) #drawerCloseBtn {
+  display: none !important;
+}
+
+body.m:not(#m) .drawer-panel .panel-body {
+  padding: 12px !important;
+}
+
+body.m:not(#m) .settings-row {
+  grid-template-columns: 1fr !important;
+  gap: 8px;
+}
+
+body.m:not(#m) .settings-row > * {
+  grid-column: 1 !important;
+}
+
+body.m:not(#m) .settings-actions,
+body.m:not(#m) .settings-check,
+body.m:not(#m) .settings-readonly {
+  margin-left: 0 !important;
+  max-width: none !important;
+}
+
+/* The desktop app can pick a workspace folder; in the mobile app storage is fixed. */
+body.m:not(#m) #chooseWorkspaceBtn,
+body.m:not(#m) #resetWorkspaceBtn {
+  display: none !important;
+}
+
+/* ---- library ---------------------------------------------------------------- */
+
+body.m:not(#m) .library-head {
+  flex-direction: column;
+  align-items: stretch !important;
+  gap: 10px;
+  padding: 12px !important;
+}
+
+body.m:not(#m) .library-head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+body.m:not(#m) .library-head-actions .btn {
+  flex: 1 1 auto;
+}
+
+body.m:not(#m) .library-body {
+  padding: 10px !important;
+}
+
+body.m:not(#m) .library-controls {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+body.m:not(#m) .library-controls #librarySearchInput,
+body.m:not(#m) .library-controls .library-view-toggle {
+  grid-column: 1 / -1;
+}
+
+body.m:not(#m) .library-controls select {
+  width: 100%;
+  min-width: 0;
+}
+
+body.m:not(#m) .library-content {
+  display: block !important;
+}
+
+body.m:not(#m) .library-catalog.grid-view {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+body.m:not(#m) .library-catalog {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Preset details slide over the catalog as a full-screen sheet. */
+body.m:not(#m) .library-details {
+  display: none;
+}
+
+body.m:not(#m).m-lib-detail .library-details,
+body.m:not(#m) .library-details:has(#seriesDetailsContent:not([hidden])) {
+  display: block !important;
+}
+
+body.m:not(#m).m-lib-detail .library-details {
+  position: fixed;
+  inset: 0 0 calc(var(--m-tabbar-h) + var(--m-safe-bottom)) 0;
+  z-index: 40;
+  overflow: auto;
+  padding: calc(var(--m-safe-top) + 10px) 14px 20px;
+  background: var(--bg, #101010);
+  border: 0 !important;
+  border-radius: 0 !important;
+  max-height: none !important;
+  width: auto !important;
+}
+
+body.m:not(#m) .library-detail-actions {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+body.m:not(#m) .library-detail-actions .btn {
+  width: 100%;
+  min-height: 44px;
+}
+
+body.m:not(#m) .series-shelf-strip {
+  overflow-x: auto;
+}
+
+/* ---- modals --------------------------------------------------------------- */
+
+body.m:not(#m) .modal-backdrop {
+  align-items: flex-end !important;
+  padding: 0 !important;
+}
+
+body.m:not(#m) .modal-backdrop > div {
+  width: 100% !important;
+  max-width: none !important;
+  max-height: calc(100dvh - var(--m-safe-top) - 24px) !important;
+  border-radius: 18px 18px 0 0 !important;
+  padding-bottom: var(--m-safe-bottom);
+  overflow: auto;
+}
+
+body.m:not(#m) .insert-search {
+  grid-template-columns: 1fr !important;
+}
+
+/* ---- touch sizes ------------------------------------------------------------- */
+
+body.m:not(#m) .btn {
+  min-height: 40px;
+}
+
+body.m:not(#m) input[type="text"],
+body.m:not(#m) input[type="number"],
+body.m:not(#m) select {
+  min-height: 42px;
+  font-size: 16px;
+}
+
+/* ---- bottom tab bar --------------------------------------------------------- */
+
+body.m:not(#m) .m-tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: calc(var(--m-tabbar-h) + var(--m-safe-bottom));
+  padding-bottom: var(--m-safe-bottom);
+  background: var(--surface, #161616);
+  border-top: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+}
+
+body.m:not(#m) .m-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 0;
+  background: transparent;
+  color: var(--muted, #8a8a8a);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  padding: 6px 2px;
+  cursor: pointer;
+}
+
+body.m:not(#m) .m-tab svg {
+  width: 22px;
+  height: 22px;
+}
+
+body.m:not(#m) .m-tab.active {
+  color: var(--accent, #6ea8ff);
+}
+
+body.m:not(#m) .m-tab span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- tools sheet ------------------------------------------------------------- */
+
+body.m:not(#m) .m-sheet-backdrop {
+  position: fixed;
+  inset: 0 0 calc(var(--m-tabbar-h) + var(--m-safe-bottom)) 0;
+  z-index: 45;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+body.m:not(#m) .m-sheet-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.m:not(#m) .m-sheet {
+  width: 100%;
+  max-height: 80%;
+  overflow: auto;
+  padding: 8px 14px 16px;
+  background: var(--surface, #161616);
+  color: var(--text, #f2f2f2);
+  border-radius: 18px 18px 0 0;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  border-bottom: 0;
+  transform: translateY(16px);
+  transition: transform 0.18s ease;
+}
+
+body.m:not(#m) .m-sheet-backdrop.open .m-sheet {
+  transform: none;
+}
+
+body.m:not(#m) .m-sheet-grip {
+  width: 40px;
+  height: 4px;
+  margin: 2px auto 10px;
+  border-radius: 2px;
+  background: var(--border, rgba(255, 255, 255, 0.2));
+}
+
+body.m:not(#m) .m-sheet-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 2px 10px;
+}
+
+body.m:not(#m) .m-sheet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+body.m:not(#m) .m-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-height: 72px;
+  padding: 12px;
+  text-align: left;
+  border-radius: 12px;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  background: var(--surface-2, #1f1f1f);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+body.m:not(#m) .m-tool strong {
+  font-size: 14px;
+}
+
+body.m:not(#m) .m-tool span {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--muted, #8a8a8a);
+}
+
+body.m:not(#m) .m-tool:active,
+body.m:not(#m) .m-tab:active {
+  opacity: 0.7;
+}
+
+/* Toasts and the export animation should sit above the tab bar. */
+body.m:not(#m) .toast-wrap {
+  left: 12px;
+  right: 12px;
+  bottom: calc(var(--m-tabbar-h) + var(--m-safe-bottom) + 12px) !important;
+  align-items: center;
+}
