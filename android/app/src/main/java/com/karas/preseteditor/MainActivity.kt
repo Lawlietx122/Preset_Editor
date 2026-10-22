@@ -15,6 +15,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.karas.preseteditor.crash.CrashReportDialog
 import com.karas.preseteditor.ui.builder.BuilderScreen
 import com.karas.preseteditor.ui.common.Files
 import com.karas.preseteditor.ui.library.LibraryScreen
@@ -38,6 +39,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             PresetEditorTheme {
                 AppRoot(incoming)
+                CrashReportDialog()
             }
         }
     }

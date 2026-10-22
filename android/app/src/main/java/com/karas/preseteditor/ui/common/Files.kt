@@ -73,6 +73,14 @@ object Files {
         }
         context.startActivity(Intent.createChooser(send, "Отправить пресет"))
     }
+
+    fun shareText(context: Context, text: String) {
+        val send = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+        context.startActivity(Intent.createChooser(send, "Отправить отчёт"))
+    }
 }
 
 /** Loads a cover from disk off the main thread, downsampled to roughly [maxSizePx]. */
